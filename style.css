@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1a1a;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    height:100vh;
+}
+
+/* Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    z-index: 100;
+    margin-bottom: 20px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+/* Hero section styling */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero-text {
+    position: relative;
+    width: 90%;
+    max-width: 1400px;
+    padding: 0 4rem;
+}
+
+.hero-text h1 {
+    color: white;
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.hero-text h1 span {
+    display: block;
+    will-change: transform;
+}
+
+/* Background images */
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-img {
+    position: absolute;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 8px;
+    max-width: 25vw; /* Prevents images from being too large */
+    height: auto;
+}
+
+/* Adjusted positions with more spacing */
+.img1 {
+    top: 12%;
+    left: 5%;
+    transform: translate(-10%, 0);
+}
+
+.img2 {
+    top: 12%;
+    right: 5%;
+    transform: translate(10%, 0);
+}
+
+.img3 {
+    bottom: 10%;
+    left: 18%;
+    transform: translate(-8%, 0);
+}
+
+.img4 {
+    bottom: 10%;
+    right: 18%;
+    transform: translate(8%, 0);
+}
+
+/* Responsive fixes */
+@media (max-width: 1024px) {
+    .bg-img {
+        max-width: 30vw; /* Increase size on tablets */
+    }
+
+    .img1, .img2, .img3, .img4 {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-img {
+        max-width: 40vw;
+    }
+
+    .img1 {
+        top: 10%;
+        left: 10%;
+    }
+
+    .img2 {
+        top: 10%;
+        right: 10%;
+    }
+
+    .img3 {
+        bottom: 15%;
+        left: 10%;
+    }
+
+    .img4 {
+        bottom: 15%;
+        right: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .bg-img {
+        max-width: 45vw;
+    }
+
+    .img1, .img2, .img3, .img4 {
+        position: relative;
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .background-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
